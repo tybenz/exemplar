@@ -178,7 +178,7 @@ ul {
   border-top: 1px solid #222222;
   margin-bottom: 5em; }
 
-.post:first-child {
+.post:first-child, .post.no-border {
   border-top: none; }
 
 .post-header .date {
