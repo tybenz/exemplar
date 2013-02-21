@@ -225,7 +225,7 @@ ul {
   margin-bottom: 5em; }
 
 /* line 205, ../_sass/mobile.scss */
-.post:first-child {
+.post:first-child, .post.no-border {
   border-top: none; }
 
 /* line 209, ../_sass/mobile.scss */

@@ -202,7 +202,7 @@ ul {
     margin-bottom: 5em;
 }
 
-.post:first-child {
+.post:first-child, .post.no-border {
     border-top: none;
 }
 
