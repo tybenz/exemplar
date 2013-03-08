@@ -3,4 +3,4 @@
 *.scssc
 /stylesheets/.sass-cache/
 _site/
-_cache/*
+_cache/
