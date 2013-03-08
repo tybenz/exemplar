@@ -14,19 +14,31 @@
 <script type="text/javascript" charset="utf-8">
     document.onreadystatechange = function() {
         if ( document.readyState == 'complete' ) {
-            var active = document.querySelector( 'header a.active' ).innerHTML.toLowerCase(),
-                links = document.querySelectorAll( 'header nav li a'),
+            var active = document.querySelector( 'header nav.main a.active' ).innerHTML.toLowerCase(),
+                links = document.querySelectorAll( 'header nav.main li a'),
                 selection = document.querySelector( 'header .nav-selection' ),
-                i, link;
+                subactive = document.querySelector( 'header nav.subnav a.active' ).innerHTML.toLowerCase(),
+                sublinks = document.querySelectorAll( 'header nav.subnav li a'),
+                subselection = document.querySelector( 'header .subnav-selection' ),
+                i, j, link;
             for ( i = 0; i < links.length; i++ ) {
                 link = links[ i ];
-                console.log(link);
                 link.addEventListener( 'mouseover', function() {
                     selection.className = 'nav-selection';
                     selection.className = 'nav-selection ' + this.innerHTML.toLowerCase();
                 });
                 link.addEventListener( 'mouseout', function() {
                     selection.className = 'nav-selection ' + active;
+                });
+            }
+            for ( i = 0; i < sublinks.length; i++ ) {
+                link = sublinks[ i ];
+                link.addEventListener( 'mouseover', function() {
+                    subselection.className = 'subnav-selection';
+                    subselection.className = 'subnav-selection ' + this.innerHTML.toLowerCase();
+                });
+                link.addEventListener( 'mouseout', function() {
+                    subselection.className = 'subnav-selection ' + subactive;
                 });
             }
         }

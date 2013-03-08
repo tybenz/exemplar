@@ -18,10 +18,8 @@ h1.hero {
     font-size: 3.5em;
 }
 
-header .avatar {
+.github {
+  @media (min-width: em(1000)) {
     display: block;
-}
-
-header .social {
-    display: block;
+  }
 }

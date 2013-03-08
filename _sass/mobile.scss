@@ -18,6 +18,7 @@ body {
     margin: 0;
     color: $grey;
     font-size: 1.2em;
+    min-width: 257px;
 }
 
 a {
@@ -66,7 +67,7 @@ h5 {
 
 h1.hero {
     font-size: 4.5em;
-    margin: 0.3em 0 0.1em;
+    margin: 0.5em 0 0.1em;
 }
 
 p {
@@ -81,6 +82,7 @@ p {
 .container {
     @include outer-container;
     max-width: 780px;
+    position: relative;
 }
 
 header a {
@@ -102,17 +104,29 @@ header .logo {
     font-style: italic;
 }
 
-header nav ul li {
+header nav li {
     float: left;
     a {
-        padding-right: 20px;
+      padding-right: 20px;
     }
 }
 
+header nav.subnav {
+  z-index: 2;
+  margin: 10px 0 -40px;
+  position: absolute;
+  right: 0;
+}
+
+header .subnav a {
+  padding-right: 0;
+  padding-left: 20px;
+}
+
 header .nav-slider {
-    height: 10px;
-    background-color: $black;
-    position: relative;
+  height: 10px;
+  background-color: $black;
+  position: relative;
 }
 
 header .nav-selection {
@@ -136,6 +150,28 @@ header .nav-selection.projects {
     left: 107px;
 }
 
+header .subnav-selection {
+  position: absolute;
+  height: 10px;
+  background-color: $black;
+  width: 50px;
+}
+
+header .subnav-selection.home {
+  right: 140px;
+  width: 42px;
+}
+
+header .subnav-selection.docs {
+  right: 87px;
+  width: 35px;
+}
+
+header .subnav-selection.download {
+  right: 0;
+  width: 69px;
+}
+
 header .profile {
     float: right;
     height: 58px;
@@ -144,7 +180,6 @@ header .profile {
 }
 
 header .social {
-    display: none;
     width: 16px;
     float: left;
 }
@@ -159,7 +194,13 @@ header .avatar {
     border: 2px solid $black;
     float: left;
     margin-left: 10px;
-    display: none;
+    @media (max-width: em(327)) {
+      display: none;
+    }
+}
+
+.github {
+  display: none;
 }
 
 footer {

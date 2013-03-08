@@ -20,7 +20,7 @@
             <img src="{% include avatar_url %}?s=54" alt="avatar" class="avatar" />
         </div>
         <h5 class="logo"><a href="http://tybenz.com">Tyler Benziger</a></h5>
-        <nav>
+        <nav class="main">
             <ul>
                 {% if page.nav == "blog" %}
                     <li><a href="http://tybenz.com" class="active">Blog</a></li>
@@ -42,5 +42,27 @@
         <div class="nav-slider">
             <div class="nav-selection {{ page.nav }}"></div>
         </div>
+        <div class="subnav-slider">
+            <div class="subnav-selection {{ page.subnav }}"></div>
+        </div>
+        <nav class="subnav">
+            <ul>
+                {% if page.subnav == "home" %}
+                    <li><a href="/" class="active">Home</a></li>
+                {% else %}
+                    <li><a href="/">Home</a></li>
+                {% endif %}
+                {% if page.subnav == "docs" %}
+                    <li><a href="/docs" class="active">Docs</a></li>
+                {% else %}
+                    <li><a href="/docs">Docs</a></li>
+                {% endif %}
+                {% if page.subnav == "download" %}
+                    <li><a href="https://github.com/tybenz/exemplar/archive/master.zip" class="active">Download</a></li>
+                {% else %}
+                    <li><a href="https://github.com/tybenz/exemplar/archive/master.zip">Download</a></li>
+                {% endif %}
+            </ul>
+        </nav>
     </div>
 </header>
