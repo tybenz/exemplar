@@ -20,7 +20,9 @@
 
 <body>
 <div class="wrapper">
-    <a href="https://github.com/tybenz/exemplar"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub"></a>
+    <div class="github">
+      <a href="https://github.com/tybenz/exemplar"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub"></a>
+    </div>
     <header>
     <div class="container">
         <div class="profile">
@@ -44,7 +46,7 @@
 ?s=54" alt="avatar" class="avatar" />
         </div>
         <h5 class="logo"><a href="http://tybenz.com">Tyler Benziger</a></h5>
-        <nav>
+        <nav class="main">
             <ul>
                 
                     <li><a href="http://tybenz.com">Blog</a></li>
@@ -60,6 +62,22 @@
         <div class="nav-slider">
             <div class="nav-selection projects"></div>
         </div>
+        <div class="subnav-slider">
+            <div class="subnav-selection "></div>
+        </div>
+        <nav class="subnav">
+            <ul>
+                
+                    <li><a href="/">Home</a></li>
+                
+                
+                    <li><a href="/docs">Docs</a></li>
+                
+                
+                    <li><a href="https://github.com/tybenz/exemplar/archive/master.zip">Download</a></li>
+                
+            </ul>
+        </nav>
     </div>
 </header>
 
@@ -97,19 +115,31 @@
 <script type="text/javascript" charset="utf-8">
     document.onreadystatechange = function() {
         if ( document.readyState == 'complete' ) {
-            var active = document.querySelector( 'header a.active' ).innerHTML.toLowerCase(),
-                links = document.querySelectorAll( 'header nav li a'),
+            var active = document.querySelector( 'header nav.main a.active' ).innerHTML.toLowerCase(),
+                links = document.querySelectorAll( 'header nav.main li a'),
                 selection = document.querySelector( 'header .nav-selection' ),
-                i, link;
+                subactive = document.querySelector( 'header nav.subnav a.active' ).innerHTML.toLowerCase(),
+                sublinks = document.querySelectorAll( 'header nav.subnav li a'),
+                subselection = document.querySelector( 'header .subnav-selection' ),
+                i, j, link;
             for ( i = 0; i < links.length; i++ ) {
                 link = links[ i ];
-                console.log(link);
                 link.addEventListener( 'mouseover', function() {
                     selection.className = 'nav-selection';
                     selection.className = 'nav-selection ' + this.innerHTML.toLowerCase();
                 });
                 link.addEventListener( 'mouseout', function() {
                     selection.className = 'nav-selection ' + active;
+                });
+            }
+            for ( i = 0; i < sublinks.length; i++ ) {
+                link = sublinks[ i ];
+                link.addEventListener( 'mouseover', function() {
+                    subselection.className = 'subnav-selection';
+                    subselection.className = 'subnav-selection ' + this.innerHTML.toLowerCase();
+                });
+                link.addEventListener( 'mouseout', function() {
+                    subselection.className = 'subnav-selection ' + subactive;
                 });
             }
         }

@@ -8,7 +8,8 @@ body {
   font-family: "Source Sans Pro", Helvetica, Arial, sans-serif;
   margin: 0;
   color: #444444;
-  font-size: 1.2em; }
+  font-size: 1.2em;
+  min-width: 257px; }
 
 a {
   color: #5ea5ff;
@@ -46,7 +47,7 @@ h5 {
 
 h1.hero {
   font-size: 4.5em;
-  margin: 0.3em 0 0.1em; }
+  margin: 0.5em 0 0.1em; }
 
 p {
   line-height: 1.5em;
@@ -60,7 +61,8 @@ p {
   max-width: 68em;
   margin-left: auto;
   margin-right: auto;
-  max-width: 780px; }
+  max-width: 780px;
+  position: relative; }
   .container:before, .container:after {
     content: "";
     display: table; }
@@ -87,10 +89,20 @@ header nav ul {
 header .logo {
   font-style: italic; }
 
-header nav ul li {
+header nav li {
   float: left; }
-  header nav ul li a {
+  header nav li a {
     padding-right: 20px; }
+
+header nav.subnav {
+  z-index: 2;
+  margin: 10px 0 -40px;
+  position: absolute;
+  right: 0; }
+
+header .subnav a {
+  padding-right: 0;
+  padding-left: 20px; }
 
 header .nav-slider {
   height: 10px;
@@ -114,6 +126,24 @@ header .nav-selection.projects {
   width: 60px;
   left: 107px; }
 
+header .subnav-selection {
+  position: absolute;
+  height: 10px;
+  background-color: #111111;
+  width: 50px; }
+
+header .subnav-selection.home {
+  right: 140px;
+  width: 42px; }
+
+header .subnav-selection.docs {
+  right: 87px;
+  width: 35px; }
+
+header .subnav-selection.download {
+  right: 0;
+  width: 69px; }
+
 header .profile {
   float: right;
   height: 58px;
@@ -121,7 +151,6 @@ header .profile {
   margin-top: 14px; }
 
 header .social {
-  display: none;
   width: 16px;
   float: left; }
 
@@ -133,7 +162,12 @@ header .avatar {
   height: 58px;
   border: 2px solid #111111;
   float: left;
-  margin-left: 10px;
+  margin-left: 10px; }
+  @media (max-width: 20.4375em) {
+    header .avatar {
+      display: none; } }
+
+.github {
   display: none; }
 
 footer {

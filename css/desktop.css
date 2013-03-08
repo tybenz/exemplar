@@ -26,8 +26,6 @@ h1.hero {
 .project h2 {
   font-size: 3.5em; }
 
-header .avatar {
-  display: block; }
-
-header .social {
-  display: block; }
+@media (min-width: 62.5em) {
+  .github {
+    display: block; } }
