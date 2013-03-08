@@ -17,7 +17,11 @@
                     </div>
                 </a>
             </div>
-            <img src="{% include avatar_url %}?s=54" alt="avatar" class="avatar" />
+            <div class="avatar" data-picture data-alt="avatar">
+                <div data-src="{% include avatar_url %}?s=54"></div>
+                <div data-src="{% include avatar_url %}?s=108" data-media="(-webkit-min-device-pixel-ratio: 2)"></div>
+                <noscript><img src="{% include avatar_url %}?s=54" alt="avatar"></noscript>
+            </div>
         </div>
         <h5 class="logo"><a href="http://tybenz.com">Tyler Benziger</a></h5>
         <nav class="main">

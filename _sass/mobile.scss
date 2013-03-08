@@ -191,9 +191,14 @@ header .social img {
 
 header .avatar {
     height: 58px;
+    width: 58px;
     border: 2px solid $black;
     float: left;
     margin-left: 10px;
+    img {
+      width: 100%;
+      height: 100%;
+    }
     @media (max-width: em(327)) {
       display: none;
     }
