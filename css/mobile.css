@@ -132,11 +132,11 @@ header .subnav-selection {
   background-color: #111111;
   width: 50px; }
 
-header .subnav-selection.home {
+header .subnav-selection.exemplar-home {
   right: 140px;
   width: 42px; }
 
-header .subnav-selection.docs {
+header .subnav-selection.exemplar-docs {
   right: 87px;
   width: 35px; }
 
