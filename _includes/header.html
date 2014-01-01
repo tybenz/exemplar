@@ -52,14 +52,14 @@
         <nav class="subnav">
             <ul>
                 {% if page.subnav == "exemplar-home" %}
-                  <li><a href="/" class="active" data-subnav="exemplar-home">Home</a></li>
+                  <li><a href="/exemplar" class="active" data-subnav="exemplar-home">Home</a></li>
                 {% else %}
-                    <li><a href="/" data-subnav="exemplar-home">Home</a></li>
+                    <li><a href="/exemplar" data-subnav="exemplar-home">Home</a></li>
                 {% endif %}
                 {% if page.subnav == "exemplar-docs" %}
-                    <li><a href="/docs" class="active" data-subnav="exemplar-docs">Docs</a></li>
+                    <li><a href="/exemplar/docs" class="active" data-subnav="exemplar-docs">Docs</a></li>
                 {% else %}
-                    <li><a href="/docs" data-subnav="exemplar-docs">Docs</a></li>
+                    <li><a href="/exemplar/docs" data-subnav="exemplar-docs">Docs</a></li>
                 {% endif %}
                 {% if page.subnav == "download" %}
                     <li><a href="https://github.com/tybenz/exemplar/archive/master.zip" class="active" data-subnav="download">Download</a></li>
