@@ -74,13 +74,13 @@
         <nav class="subnav">
             <ul>
                 
-                    <li><a href="/">Home</a></li>
+                    <li><a href="/" data-subnav="exemplar-home">Home</a></li>
                 
                 
-                    <li><a href="/docs">Docs</a></li>
+                    <li><a href="/docs" data-subnav="exemplar-docs">Docs</a></li>
                 
                 
-                    <li><a href="https://github.com/tybenz/exemplar/archive/master.zip">Download</a></li>
+                    <li><a href="https://github.com/tybenz/exemplar/archive/master.zip" data-subnav="download">Download</a></li>
                 
             </ul>
         </nav>
@@ -123,7 +123,7 @@
             var active = document.querySelector( 'header nav.main a.active' ).innerHTML.toLowerCase(),
                 links = document.querySelectorAll( 'header nav.main li a'),
                 selection = document.querySelector( 'header .nav-selection' ),
-                subactive = document.querySelector( 'header nav.subnav a.active' ).innerHTML.toLowerCase(),
+                subactive = document.querySelector( 'header nav.subnav a.active' ).dataset.subnav,
                 sublinks = document.querySelectorAll( 'header nav.subnav li a'),
                 subselection = document.querySelector( 'header .subnav-selection' ),
                 i, j, link;
@@ -141,7 +141,7 @@
                 link = sublinks[ i ];
                 link.addEventListener( 'mouseover', function() {
                     subselection.className = 'subnav-selection';
-                    subselection.className = 'subnav-selection ' + this.innerHTML.toLowerCase();
+                    subselection.className = 'subnav-selection ' + this.dataset.subnav;
                 });
                 link.addEventListener( 'mouseout', function() {
                     subselection.className = 'subnav-selection ' + subactive;
