@@ -1,7 +1,7 @@
 ---
 title: Docs
 nav: projects
-subnav: docs
+subnav: exemplar-docs
 layout: default
 ---
 
