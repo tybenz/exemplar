@@ -12,6 +12,8 @@ First, make sure you have the `jekyll` and `sass` gems installed. In your termin
 You can optionally install the *bourbon* gem in order to update the Bourbon folder:
 
     gem install bourbon
+    cd _sass
+    bourbon install
 
 Start running Jekyll (defaults to port 4000) and watching Sass:
 
